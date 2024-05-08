@@ -1,6 +1,6 @@
 version: "3.2"
 services:
-  brainwave_sound_generator:
+  binarual_beats_generator:
     tty: true
     stdin_open: true
     user: root
