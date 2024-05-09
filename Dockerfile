@@ -82,6 +82,13 @@ WORKDIR $HOME/app
 
 # Copy the current directory contents into the container at $HOME/app setting the owner to the user
 COPY --chown=user . $HOME/app
+## install Poetry
+RUN curl -sSL https://install.python-poetry.org | python3 -
+ENV PATH $PATH:/root/.local/bin
+RUN poetry config virtualenvs.create true \
+  && poetry config virtualenvs.in-project false
 
+RUN poetry install --no-dev
+RUN poetry install
 
 CMD ["poetry", "run", "streamlit", "run", "src/app.py", "--server.port", "7860"]
