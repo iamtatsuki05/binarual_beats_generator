@@ -1,5 +1,6 @@
 import base64
 from io import BytesIO
+from pathlib import Path
 
 import scipy.io.wavfile as wav
 import streamlit as st
@@ -18,8 +19,11 @@ from brainwave.config.app import (
 )
 from brainwave.utils.binaural_beats import generate_binaural_beats
 
+HEADER_IMAGE = Path(__file__).resolve().parent.parent / 'images' / 'header.png'
+
 
 def app():
+    st.image(str(HEADER_IMAGE), use_column_width=True)
     st.title('Binaural Beats Generator')
 
     st.subheader('Brain Wave Selection')
