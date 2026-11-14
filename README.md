@@ -1,3 +1,5 @@
+![Binaural Beats Generator](images/header.png)
+
 # Binaural Beats Generator
 ![app_sample](https://github.com/iamtatsuki05/binarual_beats_generator/blob/main/images/app_sample.png)
 
